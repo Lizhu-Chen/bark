@@ -8,7 +8,7 @@ BARK comes with a geometry library allowing manipulations and calculations with 
 
 
 ## BaseObject
-A common base class for all BARK classes provides common functionality. Currently, it contains the global `ParameterServer` instance. In the future, this class can be extended with loggers and more modules. 
+A common base class for all BARK classes provides common functionality. Currently, it contains the global `ParameterServer` instance. In the future, this class can be extended with loggers and more bark. 
 
 
 ```cpp

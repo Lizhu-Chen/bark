@@ -30,7 +30,7 @@ The most important functions in the `World` class are listed below.
 ```
 
 ## ObservedWorld
-The `ObservedWorld` is derived from the (protected) `World`. Furthermore, it offers additional functionality in order to increase its usability in the planning modules. 
+The `ObservedWorld` is derived from the (protected) `World`. Furthermore, it offers additional functionality in order to increase its usability in the planning bark. 
 In the future, perturbations and other effects could be modeled. For example, the ego agent only having a partial world-view.
 
 ```cpp

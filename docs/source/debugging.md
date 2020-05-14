@@ -50,7 +50,7 @@ The path `examples/od8_const_vel_one_agent.runfiles` needs to be changed if anot
 
 ### Debug from Python into C++ Extension
 
-We run two Debuggers in parallel. First, check if the shared object "bark.so" contains debug symbols with e.g. `readelf --debug-dump=decodedline bark.so` which should print out line numbers and source file name for each instruction. If not use `bazel build //path_to_python_binary --compilation_mode=dbg` to build all dependencies with debug symbols.  Then, add the following launch configuration and adapt the path in "additionalSOLibSearchPath":
+We run two Debuggers in parallel. First, check if the shared object "core.so" contains debug symbols with e.g. `readelf --debug-dump=decodedline core.so` which should print out line numbers and source file name for each instruction. If not use `bazel build //path_to_python_binary --compilation_mode=dbg` to build all dependencies with debug symbols.  Then, add the following launch configuration and adapt the path in "additionalSOLibSearchPath":
 ```
 {
             "name": "(gdb) Attach",
@@ -73,6 +73,6 @@ For debugging;
 ### Memory Checking
 
 Use Valgrind to profile the code in order to find memory leaks. Valgrind can be installed using apt-get.
-1. Build the target with debug symbols, i.e. `bazel test //modules/world/tests:py_map_interface_tests --compilation_mode=dbg`
+1. Build the target with debug symbols, i.e. `bazel test //bark/world/tests:py_map_interface_tests --compilation_mode=dbg`
 2. Profile via `valgrind --track-origins=yes --keep-stacktraces=alloc-and-free --leak-check=full ./bazel-bin/modules/world/tests/map_interface_test`. There are a lot of options, check out Valgrind's documentation!
 
