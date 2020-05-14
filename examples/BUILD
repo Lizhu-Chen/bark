@@ -7,6 +7,7 @@ py_test(
   imports = ['../python/'],
   deps = ["//modules/runtime/commons:parameters",
           "//modules/runtime/commons:xodr_parser",
+          "//modules/runtime/commons:model_json_conversion",
           "//modules/runtime/viewer:pygame_viewer",
           "//modules/runtime/viewer:matplotlib_viewer",
           "//modules/runtime:runtime",],

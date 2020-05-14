@@ -5,9 +5,9 @@
 
 import numpy as np
 import time
-from modules.runtime.commons.parameters import ParameterServer
-from modules.runtime.viewer.matplotlib_viewer import MPViewer
-from modules.runtime.commons.xodr_parser import XodrParser
+from modules.runtime.commons import ParameterServer
+from modules.runtime.viewer import MPViewer
+from modules.runtime.commons import XodrParser
 from bark.models.behavior import BehaviorConstantVelocity
 from bark.models.execution import ExecutionModelInterpolate
 from bark.models.dynamic import SingleTrackModel
