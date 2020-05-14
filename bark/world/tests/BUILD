@@ -170,7 +170,7 @@ cc_test(
 py_test(
   name = "py_opendrive_tests",
   srcs = ["py_opendrive_tests.py"],
-  data = ['//bark/core:core.so'],
+  data = ['//bark/pybark:core.so'],
   imports = ['../../../python/'],
   deps = [],
 )
@@ -178,7 +178,7 @@ py_test(
 py_test(
   name = "py_map_interface_tests",
   srcs = ["py_map_interface_tests.py"],
-  data = ['//bark/core:core.so',
+  data = ['//bark/pybark:core.so',
           '//bark/runtime/tests:xodr_data'],
   imports = ['../../../python/'],
   deps = ["//bark/runtime/commons:parameters",
@@ -189,7 +189,7 @@ py_test(
 py_test(
   name = "py_agent_tests",
   srcs = ["py_agent_tests.py"],
-  data = ['//bark/core:core.so'],
+  data = ['//bark/pybark:core.so'],
   imports = ['../../../python/'],
   deps = ["//bark/runtime/commons:parameters"],
 )
@@ -197,7 +197,7 @@ py_test(
 py_test(
   name = "py_world_tests",
   srcs = ["py_world_tests.py"],
-  data = ['//bark/core:core.so'],
+  data = ['//bark/pybark:core.so'],
   imports = ['../../../python/'],
   deps = ["//bark/runtime/commons:parameters",
           "//bark/runtime:runtime"],
@@ -206,7 +206,7 @@ py_test(
 py_test(
   name = "py_system_tests",
   srcs = ["py_system_tests.py"],
-  data = ['//bark/core:core.so',
+  data = ['//bark/pybark:core.so',
           ':params2'],
   imports = ['../../../python/'],
   deps = ["//bark/runtime/commons:parameters",
@@ -217,7 +217,7 @@ py_test(
 py_test(
   name = "py_roadgraph_test",
   srcs = ["py_roadgraph_test.py"],
-  data = ['//bark/core:core.so',
+  data = ['//bark/pybark:core.so',
           '//bark/runtime/tests:xodr_data'],
   imports = ['../../../python/'],
   deps = ["//bark/runtime/commons:parameters",
@@ -227,7 +227,7 @@ py_test(
 py_test(
   name = "py_road_corridor_tests",
   srcs = ["py_road_corridor_tests.py"],
-  data = ['//bark/core:core.so',
+  data = ['//bark/pybark:core.so',
           '//bark/runtime/tests:xodr_data'],
   imports = ['../../../python/'],
   deps = ["//bark/runtime/commons:parameters",

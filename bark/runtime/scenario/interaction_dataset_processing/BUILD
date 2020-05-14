@@ -13,7 +13,7 @@ py_library(
             "interaction_dataset_reader.py",
             ],
     data = [
-        "//bark/core:core.so",
+        "//bark/pybark:core.so",
         ] + 
     select({":_interaction_dataset_present" : ["@interaction_dataset_fortiss_internal//:maps_tracks"], "//conditions:default": []}),
     imports = ["../../../python/"],

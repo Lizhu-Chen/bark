@@ -4,8 +4,8 @@
 # https://opensource.org/licenses/MIT
 
 import unittest
-from bark.core.core.world.map import Roadgraph
-from bark.core.core.world.opendrive import XodrLane
+from bark.pybark.core.world.map import Roadgraph
+from bark.pybark.core.world.opendrive import XodrLane
 from bark.runtime.commons.xodr_parser import XodrParser
 
 

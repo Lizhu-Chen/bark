@@ -3,9 +3,9 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-from bark.core.core.world.opendrive import *
-from bark.core.core.world import *
-from bark.core.core.geometry import *
+from bark.pybark.core.world.opendrive import *
+from bark.pybark.core.world import *
+from bark.pybark.core.geometry import *
 from bark.runtime import PyRuntime
 
 

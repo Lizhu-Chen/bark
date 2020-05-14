@@ -11,14 +11,14 @@ from bark.runtime.scenario.scenario_generation.deterministic \
   import DeterministicScenarioGeneration
 from bark.runtime.scenario.scenario_generation.scenario_generation \
   import ScenarioGeneration
-from bark.core.core.world.goal_definition import GoalDefinition, GoalDefinitionPolygon
-from bark.core.core.geometry import *
-from bark.core.core.world import World
+from bark.pybark.core.world.goal_definition import GoalDefinition, GoalDefinitionPolygon
+from bark.pybark.core.geometry import *
+from bark.pybark.core.world import World
 from bark.runtime.commons.parameters import ParameterServer
 from bark.runtime.runtime import Runtime
 from bark.runtime.viewer.matplotlib_viewer import MPViewer
-from bark.core.core.models.behavior import BehaviorModel, DynamicBehaviorModel
-from bark.core.core.models.dynamic import SingleTrackModel
+from bark.pybark.core.models.behavior import BehaviorModel, DynamicBehaviorModel
+from bark.pybark.core.models.dynamic import SingleTrackModel
 
 
 class PythonBehaviorModelWrapper(BehaviorModel):

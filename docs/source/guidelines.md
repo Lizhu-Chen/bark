@@ -10,7 +10,7 @@ For C++ code, we use cpplint. It is installed automatically within your virtual 
 ```
 Cpplint: Cpplint Path
 The path to the cpplint executable. If not set, the default location will be used.
-/(YOUR LOCAL PATH FOR BARK)/bark/core/venv/bin/cpplint
+/(YOUR LOCAL PATH FOR BARK)/bark/pybark/venv/bin/cpplint
 ```
 
 ## Coding Guidelines Python
