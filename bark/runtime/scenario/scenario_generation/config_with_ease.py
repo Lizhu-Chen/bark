@@ -3,10 +3,9 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-from bark.runtime.scenario.scenario import Scenario
-from bark.runtime.scenario.scenario_generation.scenario_generation\
-  import ScenarioGeneration
-from bark.runtime.commons.model_json_conversion import ModelJsonConversion
+from bark.runtime.scenario import Scenario
+from bark.runtime.scenario.scenario_generation import ScenarioGeneration
+from bark.runtime.commons import ModelJsonConversion
 from bark.pybark.core.world.agent import *
 from bark.pybark.core.models.behavior import *
 from bark.pybark.core.world import *

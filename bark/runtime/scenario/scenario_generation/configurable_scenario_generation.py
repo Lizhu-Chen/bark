@@ -3,9 +3,8 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-from bark.runtime.scenario.scenario import Scenario
-from bark.runtime.scenario.scenario_generation.scenario_generation \
-  import ScenarioGeneration
+from bark.runtime.scenario import Scenario
+from bark.runtime.scenario.scenario_generation  import ScenarioGeneration
 from bark.runtime.scenario.scenario_generation.config_readers import *
 from bark.runtime.commons.parameters import ParameterServer
 

@@ -4,11 +4,10 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-from bark.runtime.scenario.scenario import Scenario
-from bark.runtime.scenario.scenario_generation.scenario_generation \
-    import ScenarioGeneration
+from bark.runtime.scenario import Scenario
+from bark.runtime.scenario.scenario_generation import ScenarioGeneration
 from bark.runtime.scenario.interaction_dataset_processing.interaction_dataset_reader import agent_from_trackfile
-from bark.runtime.commons.parameters import ParameterServer
+from bark.runtime.commons import ParameterServer
 # PyBind imports
 from bark.pybark.core.world.map import *
 from bark.pybark.core.models.dynamic import *

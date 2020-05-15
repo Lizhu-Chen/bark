@@ -11,6 +11,7 @@ py_library(
     name = "interaction_dataset_processing",
     srcs = ["dataset_decomposer.py",
             "interaction_dataset_reader.py",
+            "__init__.py"
             ],
     data = [
         "//bark/pybark:core.so",
