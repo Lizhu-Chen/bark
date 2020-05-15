@@ -35,7 +35,7 @@ void python_goal_definition(py::module m) {
     .def(py::init<>())
     .def(py::init<const Polygon&>())
     .def("__repr__", [](const GoalDefinitionPolygon &g) {
-      return "bark.pybark.core.world.goal_definition.GoalDefinitionPolygon";
+      return "bark.core.world.goal_definition.GoalDefinitionPolygon";
     })
     .def_property_readonly("goal_shape", &GoalDefinitionPolygon::GetShape)
     .def(py::pickle(
@@ -55,7 +55,7 @@ void python_goal_definition(py::module m) {
       .def(py::init<>())
       .def(py::init<const Polygon&, const std::pair<float, float>&>())
       .def("__repr__", [](const GoalDefinitionStateLimits &g) {
-        return "bark.pybark.core.world.goal_definition.GoalDefinitionStateLimits";
+        return "bark.core.world.goal_definition.GoalDefinitionStateLimits";
       })
       .def_property_readonly("xy_limits",
         &GoalDefinitionStateLimits::GetXyLimits)
@@ -82,7 +82,7 @@ void python_goal_definition(py::module m) {
                             const std::pair<float,float>,
                             const std::pair<float, float>>())
       .def("__repr__", [](const GoalDefinitionStateLimitsFrenet &g) {
-        return "bark.pybark.core.world.goal_definition.GoalDefinitionStateLimitsFrenet";
+        return "bark.core.world.goal_definition.GoalDefinitionStateLimitsFrenet";
       })
       .def_property_readonly("center_line",
         &GoalDefinitionStateLimitsFrenet::GetCenterLine)
@@ -116,7 +116,7 @@ void python_goal_definition(py::module m) {
     .def(py::init<>())
     .def(py::init<const std::vector<GoalDefinitionPtr>&>())
     .def("__repr__", [](const GoalDefinitionSequential &g) {
-      return "bark.pybark.core.world.goal_definition.GoalDefinitionSequential";
+      return "bark.core.world.goal_definition.GoalDefinitionSequential";
     })
     .def("GetNextGoal", &GoalDefinitionSequential::GetNextGoal)
     .def("GetCurrentGoal", &GoalDefinitionSequential::GetCurrentGoal)

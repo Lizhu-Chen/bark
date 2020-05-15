@@ -9,8 +9,8 @@ import matplotlib as mpl
 if os.environ.get('DISPLAY', '') == '':
     print('no display found. Using non-interactive Agg backend')
     mpl.use('Agg')
-from bark.pybark.core.geometry import *
-from bark.pybark.core.geometry.standard_shapes import *
+from bark.core.geometry import *
+from bark.core.geometry.standard_shapes import *
 import math
 import numpy as np
 

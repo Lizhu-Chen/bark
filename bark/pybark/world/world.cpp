@@ -58,7 +58,7 @@ void python_world(py::module m) {
     .def("Copy", &World::Clone)
     .def("WorldExecutionAtTime", &World::WorldExecutionAtTime)
     .def("__repr__", [](const World& a) {
-      return "bark.pybark.core.world.World";
+      return "bark.core.world.World";
     });
 
   m.def("MakeTestWorldHighway",
@@ -80,7 +80,7 @@ void python_world(py::module m) {
       &ObservedWorld::Predict<BehaviorIDMClassic, DynamicBehaviorModel>)
     .def_property_readonly("other_agents", &ObservedWorld::GetOtherAgents)
     .def("__repr__", [](const ObservedWorld& a) {
-      return "bark.pybark.core.world.ObservedWorld";
+      return "bark.core.world.ObservedWorld";
     });
 
   py::class_<vertex_t>(m, "vertex_t")

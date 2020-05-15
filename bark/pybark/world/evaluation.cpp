@@ -32,7 +32,7 @@ void python_evaluation(py::module m) {
       .def(py::init<const AgentId&>())
       .def(py::init<>())
       .def("__repr__", [](const EvaluatorGoalReached &g) {
-        return "bark.pybark.core.world.evaluation.EvaluatorGoalReached";
+        return "bark.core.world.evaluation.EvaluatorGoalReached";
       });
 
   py::class_<EvaluatorBehaviorExpired, BaseEvaluator,
@@ -40,14 +40,14 @@ void python_evaluation(py::module m) {
       .def(py::init<const AgentId&>())
       .def(py::init<>())
       .def("__repr__", [](const EvaluatorBehaviorExpired &g) {
-        return "bark.pybark.core.world.evaluation.EvaluatorBehaviorExpired";
+        return "bark.core.world.evaluation.EvaluatorBehaviorExpired";
       });
 
   py::class_<EvaluatorCollisionAgents, BaseEvaluator,
     std::shared_ptr<EvaluatorCollisionAgents> >(m, "EvaluatorCollisionAgents")
     .def(py::init<>())
     .def("__repr__", [](const EvaluatorCollisionAgents &g) {
-      return "bark.pybark.core.world.evaluation.EvaluatorCollisionAgents";
+      return "bark.core.world.evaluation.EvaluatorCollisionAgents";
     });
 
   py::class_<EvaluatorDrivableArea, BaseEvaluator,
@@ -55,7 +55,7 @@ void python_evaluation(py::module m) {
     .def(py::init<>())
     .def(py::init<const AgentId&>())
     .def("__repr__", [](const EvaluatorDrivableArea &g) {
-      return "bark.pybark.core.world.evaluation.EvaluatorDrivableArea";
+      return "bark.core.world.evaluation.EvaluatorDrivableArea";
     });
 
   py::class_<EvaluatorCollisionEgoAgent, BaseEvaluator,
@@ -63,12 +63,12 @@ void python_evaluation(py::module m) {
     .def(py::init<const AgentId&>())
     .def(py::init<>())
     .def("__repr__", [](const EvaluatorCollisionEgoAgent &g) {
-      return "bark.pybark.core.world.evaluation.EvaluatorCollisionEgoAgent";
+      return "bark.core.world.evaluation.EvaluatorCollisionEgoAgent";
     });
   py::class_<EvaluatorStepCount, BaseEvaluator,
     std::shared_ptr<EvaluatorStepCount> >(m, "EvaluatorStepCount")
     .def(py::init<>())
     .def("__repr__", [](const EvaluatorStepCount &g) {
-      return "bark.pybark.core.world.evaluation.EvaluatorStepCount";
+      return "bark.core.world.evaluation.EvaluatorStepCount";
     });
 }

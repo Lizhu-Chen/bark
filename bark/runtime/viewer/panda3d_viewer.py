@@ -5,8 +5,8 @@ from direct.task import Task
 from math import pi
 import os
 
-from bark.pybark.core.viewer import Viewer
-from bark.pybark.core.models.dynamic import StateDefinition
+from bark.core.viewer import Viewer
+from bark.core.models.dynamic import StateDefinition
 from bark.runtime.viewer.viewer import BaseViewer
 from panda3d.core import WindowProperties, MeshDrawer, VBase4, VBase3,Vec4, Vec3, Mat4, AmbientLight, CardMaker, NodePath
 
