@@ -5,30 +5,22 @@
 # )
 
 
-# genrule(
-#   name = "movelib",
-# #   srcs = [
-# #     "//bark/pybark:core.so",
-# #   ],
-#   cmd = (" mv $(GENDIR)/bark/pybark/core.so  $(location core.so)") ,
-#   #]),
-#   outs = [
-#     "core.so",
-#   ],
-#   visibility = ["//visibility:public"],
-# )
+genrule(
+   name = "movelib",
+   srcs = [
+     "//bark/pybark:core.so",
+   ],
+   cmd = (" mv $(GENDIR)/bark/pybark/core.so  $(location core.so)") ,
+   outs = [
+     "core.so",
+   ],
+   visibility = ["//visibility:public"],
+ )
 
-
-# sh_binary(
-#     name = "movelib",
-#     srcs = ["movelib.sh"],
-#     data = ["//bark/pybark:core.so"],
-# )
 
 py_test(
-  name = "pip_package",
-  srcs = ["pip_package.py"],
-  data = ['//bark/pybark:core.so'],
+  name = "python_package",
+  data = [":movelib"],
   deps = ["//bark/runtime/commons:parameters",
           "//bark/runtime/commons:commons",
           "//bark/runtime/commons:xodr_parser",
@@ -44,6 +36,27 @@ py_test(
           "//bark/examples:od8_const_vel_one_agent",
           "//bark/examples:od8_const_vel_two_agent",
           "//bark/examples:planner_uct",
+          ],
+)
+
+genrule(
+   name = "movetests",
+   srcs = [
+     "//bark/pybark:core.so",
+   ],
+   cmd = (" mv $(GENDIR)/bark/pybark/core.so  $(location core.so)") ,
+   outs = [
+     "core.so",
+   ],
+   visibility = ["//visibility:public"],
+ )
+
+
+py_test(
+  name = "pip_package",
+  srcs = ["pip_package.py",],
+  data = [":movelib"],
+  deps = [":python_package"
           ],
 )
 
