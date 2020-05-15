@@ -31,7 +31,7 @@ We recommend using Ubuntu.
 7. Modify the file `install.sh` by using `virtualenv -p python ./python/venv` instead as python is now the pyenv version.
 7. Now you can follow the same steps as when using Linux.
 
-## Puild Pip package
+## Build Pip package
 * Install twine using python3 -m pip install --user --upgrade twine
 * Run script bash package.sh to build code, package and upload to pypi
 

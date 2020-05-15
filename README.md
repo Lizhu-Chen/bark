@@ -38,7 +38,7 @@ If you use BARK, please cite us using the following paper:
 
 ## Quick Start
 Use `git clone https://github.com/bark-simulator/bark.git` or download the repository from this page.
-Then follow the instructions at [How to Install BARK](https://github.com/bark-simulator/bark/blob/master/docs/source/installation.md).
+Then follow the instructions at [How to Install BARK](https://github.com/bark-simulator/bark/blob/pip_package_merged_dirs/docs/source/installation.md).
 
 After the installation, you can explore the examples by e.g. running `source dev_into.sh && bazel run //examples:od8_const_vel_two_agent`.
 
