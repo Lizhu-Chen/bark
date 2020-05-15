@@ -43,10 +43,10 @@ Set breakpoints and debug
     "program": "${file}",
     "console": "integratedTerminal",
     "env": {
-        "PYTHONPATH": "${workspaceFolder}/bazel-bin/examples/od8_const_vel_one_agent.runfiles/__main__/python:${workspaceFolder}/bazel-bin/examples/od8_const_vel_one_agent.runfiles/__main__"
+        "PYTHONPATH": "${workspaceFolder}/bazel-bin/bark/examplesod8_const_vel_one_agent.runfiles/__main__/python:${workspaceFolder}/bazel-bin/bark/examplesod8_const_vel_one_agent.runfiles/__main__"
   }
 ```
-The path `examples/od8_const_vel_one_agent.runfiles` needs to be changed if another python file should be debugged. Furthermore, make sure to be in the main executable file when launching the debugger (F5).
+The path `bark/examplesod8_const_vel_one_agent.runfiles` needs to be changed if another python file should be debugged. Furthermore, make sure to be in the main executable file when launching the debugger (F5).
 
 ### Debug from Python into C++ Extension
 
@@ -58,7 +58,7 @@ We run two Debuggers in parallel. First, check if the shared object "core.so" co
             "request": "attach",
             "program": "${workspaceFolder}/python/venv/bin/python3",
             "cwd" : "${workspaceFolder}",
-            "additionalSOLibSearchPath":"${workspaceFolder}/bazel-bin/examples/od8_const_vel_two_agent.runfiles/__main__/python",
+            "additionalSOLibSearchPath":"${workspaceFolder}/bazel-bin/bark/examplesod8_const_vel_two_agent.runfiles/__main__/python",
             "processId": "${command:pickProcess}",
             "MIMode": "gdb",
             "sourceFileMap" : {"/proc/self/cwd/": "${workspaceFolder}"},
