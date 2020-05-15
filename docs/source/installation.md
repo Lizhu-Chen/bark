@@ -11,6 +11,9 @@ We recommend using Ubuntu.
 * gcc7 (needs to be set as the default compiler)
 * Visual Studio Code
 
+## Install using pip
+* pip3 install bark-simulator
+
 ## Setup on Linux
 1. Use `git clone https://github.com/bark-simulator/bark.git` or download the repository from this page.
 2. Run `bash install.sh`: creates a virtual environment (located in python/venv) and installs all python packages
@@ -27,6 +30,10 @@ We recommend using Ubuntu.
 6. Install an older version of the virtualenv package by running: `pip install virtualenv==16.7.8`
 7. Modify the file `install.sh` by using `virtualenv -p python ./python/venv` instead as python is now the pyenv version.
 7. Now you can follow the same steps as when using Linux.
+
+## Puild Pip package
+* Install twine using python3 -m pip install --user --upgrade twine
+* Run script bash package.sh to build code, package and upload to pypi
 
 ## Frequently Asked Questions (FAQs)
 #### Python.h not found
