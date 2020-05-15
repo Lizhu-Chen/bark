@@ -56,6 +56,12 @@ cd $build_dir/$workspace_name
 python3 setup.py clean
 python3 setup.py sdist bdist_wheel
 
+# virtual env, install wheel with tests
+python3 setup.py test # nosetests
+
+# how to call tests and check if they fail
+
+
 #upload to pypi
 python3 -m twine upload --skip-existing dist/*
 

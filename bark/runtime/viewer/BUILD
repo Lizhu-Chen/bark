@@ -18,6 +18,11 @@ filegroup(
 )
 
 py_library(
+    name="viewer"
+    
+)
+
+py_library(
     name = "py_viewer",
     srcs = ["viewer.py","__init__.py"],
     data = ['//bark/pybark:core.so'],

@@ -4,7 +4,7 @@
 # https://opensource.org/licenses/MIT
 
 from bark.runtime.scenario import Scenario
-from bark.runtime.scenario.scenario_generation import ScenarioGeneration
+from .scenario_generation import ScenarioGeneration
 from bark.runtime.commons import ModelJsonConversion
 from bark.core.world.agent import *
 from bark.core.models.behavior import *

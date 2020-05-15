@@ -6,7 +6,7 @@
 
 
 genrule(
-  name = "movelib",
+  name = "generate_core",
   srcs = [
     "//bark/pybark:core.so",
   ],
@@ -18,6 +18,27 @@ genrule(
   visibility = ["//visibility:public"],
 )
 
+genrule(
+  name = "package_tests",
+  srcs = [
+    glob("**/**/*py_*_tests.py")
+  ],
+  cmd = (" cp $(GENDIR)/**/*py_*_tests.py  $(location tests/*)") ,
+  #]),
+  outs = [
+    "core.so",
+  ],
+  visibility = ["//visibility:public"],
+)
+
+or 
+
+filegroup(
+   srcs = [
+    glob("**/**/*py_*_tests.py")
+  ]
+)
+
 
 # sh_binary(
 #     name = "movelib",
@@ -25,10 +46,11 @@ genrule(
 #     data = ["//bark/pybark:core.so"],
 # )
 
+
 py_test(
   name = "pip_package",
   srcs = ["pip_package.py"],
-  data = [':movelib'],
+  data = [':generate_core'],
   deps = ["//bark/runtime/commons:parameters",
           "//bark/runtime/commons:commons",
           "//bark/runtime/commons:xodr_parser",

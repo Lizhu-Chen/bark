@@ -25,9 +25,8 @@ py_test(
 py_test(
   name = "py_scenario_generation_tests",
   srcs = ["py_scenario_generation_tests.py"],
-  data = ['//bark/pybark:core.so',
+  data = ['//bark:generate_core',
             ':xodr_data'],
-  imports = ['../../python/'],
   deps = ["//bark/runtime/commons:parameters",
           "//bark/runtime/commons:xodr_parser",
           "//bark/runtime/scenario/interaction_dataset_processing:interaction_dataset_processing",

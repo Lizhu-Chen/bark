@@ -7,7 +7,7 @@ import os
 import shutil
 
 from bark.runtime.commons import ParameterServer
-from bark.runtime.scenario.interaction_dataset_processing import agent_from_trackfile
+from .interaction_dataset_reader import agent_from_trackfile
 
 from com_github_interaction_dataset_interaction_dataset.python.utils import dataset_reader
 
