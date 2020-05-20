@@ -3,9 +3,9 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-from bark.runtime.scenario.scenario import Scenario
+from bark.runtime.scenario import Scenario
 from bark.runtime.scenario.scenario_generation import ScenarioGeneration
-from bark.runtime.commons.model_json_conversion import ModelJsonConversion
+from bark.runtime.commons import ModelJsonConversion
 from bark.core.world.agent import *
 from bark.core.models.behavior import *
 from bark.core.world import *
@@ -51,7 +51,7 @@ class DeterministicDroneChallengeGeneration(ScenarioGeneration):
 
     self._map_file_name = self._local_params["MapFilename",
      "Path to the open drive map", 
-     "modules/runtime/tests/data/Crossing8Course.xodr"]
+     "bark/runtime/tests/data/Crossing8Course.xodr"]
     self._json_converter = ModelJsonConversion()
 
 

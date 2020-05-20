@@ -69,7 +69,7 @@ class PythonBehaviorModelWrapperInheritance(BehaviorModel):
 class PyBehaviorModelTests(unittest.TestCase):
   def test_python_model(self):
     param_server = ParameterServer(
-      filename="modules/runtime/tests/data/deterministic_scenario.json")
+      filename="bark/runtime/tests/data/deterministic_scenario.json")
     scenario_generation = DeterministicScenarioGeneration(num_scenarios=3,
                                                           random_seed=0,
                                                           params=param_server)
@@ -88,7 +88,7 @@ class PyBehaviorModelTests(unittest.TestCase):
 
   def test_python_model_inheritance(self):
     param_server = ParameterServer(
-      filename="modules/runtime/tests/data/deterministic_scenario.json")
+      filename="bark/runtime/tests/data/deterministic_scenario.json")
     scenario_generation = DeterministicScenarioGeneration(num_scenarios=3,
                                                           random_seed=0,
                                                           params=param_server)

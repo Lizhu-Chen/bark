@@ -63,7 +63,7 @@ class RoadCorridorTests(unittest.TestCase):
     viewer.show(block=True)
 
   def test_road_corridor_forward(self):
-    xodr_parser = XodrParser("modules/runtime/tests/data/road_corridor_test.xodr")
+    xodr_parser = XodrParser("bark/runtime/tests/data/road_corridor_test.xodr")
 
     # World Definition
     params = ParameterServer()
@@ -126,7 +126,7 @@ class RoadCorridorTests(unittest.TestCase):
 
   @unittest.skip
   def test_road_corridor_highway(self):
-    xodr_parser = XodrParser("modules/runtime/tests/data/city_highway_straight.xodr")
+    xodr_parser = XodrParser("bark/runtime/tests/data/city_highway_straight.xodr")
 
     # World Definition
     params = ParameterServer()
@@ -190,7 +190,7 @@ class RoadCorridorTests(unittest.TestCase):
 
   @unittest.skip
   def test_road_corridor_merging(self):
-    xodr_parser = XodrParser("modules/runtime/tests/data/DR_DEU_Merging_MT.xodr")
+    xodr_parser = XodrParser("bark/runtime/tests/data/DR_DEU_Merging_MT.xodr")
 
     # World Definition
     params = ParameterServer()
@@ -227,7 +227,7 @@ class RoadCorridorTests(unittest.TestCase):
 
   @unittest.skip
   def test_road_corridor_intersection(self):
-    xodr_parser = XodrParser("modules/runtime/tests/data/road_corridor_test.xodr")
+    xodr_parser = XodrParser("bark/runtime/tests/data/road_corridor_test.xodr")
 
     # World Definition
     params = ParameterServer()

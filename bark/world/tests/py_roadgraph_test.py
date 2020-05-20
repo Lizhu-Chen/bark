@@ -33,7 +33,7 @@ class RoadgraphTests(unittest.TestCase):
       print(edge.edge_type)
   
   def test_FindRoadPath_4way_intersection(self):
-    xodr_parser = XodrParser("modules/runtime/tests/data/4way_intersection.xodr")
+    xodr_parser = XodrParser("bark/runtime/tests/data/4way_intersection.xodr")
     rg = Roadgraph()
     rg.Generate(xodr_parser.map)
 

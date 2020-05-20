@@ -74,5 +74,5 @@ For debugging;
 
 Use Valgrind to profile the code in order to find memory leaks. Valgrind can be installed using apt-get.
 1. Build the target with debug symbols, i.e. `bazel test //bark/world/tests:py_map_interface_tests --compilation_mode=dbg`
-2. Profile via `valgrind --track-origins=yes --keep-stacktraces=alloc-and-free --leak-check=full ./bazel-bin/modules/world/tests/map_interface_test`. There are a lot of options, check out Valgrind's documentation!
+2. Profile via `valgrind --track-origins=yes --keep-stacktraces=alloc-and-free --leak-check=full ./bazel-bin/bark/world/tests/map_interface_test`. There are a lot of options, check out Valgrind's documentation!
 

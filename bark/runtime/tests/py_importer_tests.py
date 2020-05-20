@@ -45,7 +45,7 @@ def helper_plot(xodr_parser):
 
 class ImporterTests(unittest.TestCase):
   def test_map_CulDeSac(self):
-    xodr_parser = XodrParser("modules/runtime/tests/data/CulDeSac.xodr")
+    xodr_parser = XodrParser("bark/runtime/tests/data/CulDeSac.xodr")
 
     map_interface = MapInterface()
     map_interface.SetOpenDriveMap(xodr_parser.map)
@@ -53,7 +53,7 @@ class ImporterTests(unittest.TestCase):
 
   def test_map_city_highway_straight(self):
     xodr_parser = XodrParser(
-      "modules/runtime/tests/data/city_highway_straight.xodr")
+      "bark/runtime/tests/data/city_highway_straight.xodr")
 
     map_interface = MapInterface()
     map_interface.SetOpenDriveMap(xodr_parser.map)
@@ -61,7 +61,7 @@ class ImporterTests(unittest.TestCase):
 
   def test_map_city_highway_curved(self):
     xodr_parser = XodrParser(
-      "modules/runtime/tests/data/city_highway_curved.xodr")
+      "bark/runtime/tests/data/city_highway_curved.xodr")
 
     map_interface = MapInterface()
     map_interface.SetOpenDriveMap(xodr_parser.map)
@@ -69,7 +69,7 @@ class ImporterTests(unittest.TestCase):
 
   def test_map_4way_intersection(self):
     xodr_parser = XodrParser(
-      "modules/runtime/tests/data/4way_intersection.xodr")
+      "bark/runtime/tests/data/4way_intersection.xodr")
 
     map_interface = MapInterface()
     map_interface.SetOpenDriveMap(xodr_parser.map)
@@ -77,7 +77,7 @@ class ImporterTests(unittest.TestCase):
 
   def test_map_urban_road(self):
     xodr_parser = XodrParser(
-      "modules/runtime/tests/data/urban_road.xodr")
+      "bark/runtime/tests/data/urban_road.xodr")
 
     map_interface = MapInterface()
     map_interface.SetOpenDriveMap(xodr_parser.map)
@@ -85,7 +85,7 @@ class ImporterTests(unittest.TestCase):
 
   def test_map_Crossing8(self):
     xodr_parser = XodrParser(
-      "modules/runtime/tests/data/Crossing8Course.xodr")
+      "bark/runtime/tests/data/Crossing8Course.xodr")
 
     map_interface = MapInterface()
     map_interface.SetOpenDriveMap(xodr_parser.map)

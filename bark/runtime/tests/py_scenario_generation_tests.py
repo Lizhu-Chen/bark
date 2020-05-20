@@ -6,14 +6,14 @@
 
 import unittest
 import os
-from bark.runtime.scenario.scenario_generation.scenario_generation\
+from bark.runtime.scenario.scenario_generation\
     import ScenarioGeneration
 
-from bark.runtime.scenario.scenario_generation.configurable_scenario_generation \
+from bark.runtime.scenario.scenario_generation \
     import ConfigurableScenarioGeneration
-from bark.runtime.scenario.scenario_generation.interaction_dataset_scenario_generation_full \
+from bark.runtime.scenario.scenario_generation \
     import InteractionDatasetScenarioGenerationFull
-from bark.runtime.commons.parameters import ParameterServer
+from bark.runtime.commons import ParameterServer
 
 from bark.core.geometry import *
 
@@ -134,8 +134,8 @@ class ScenarioGenerationTests(unittest.TestCase):
         def test_dataset_scenario_generation(self):
             params = ParameterServer()
 
-            map_filename = "modules/runtime/tests/data/DR_DEU_Merging_MT_v01_shifted.xodr"
-            track_filename = "modules/runtime/tests/data/interaction_dataset_dummy_track.csv"
+            map_filename = "bark/runtime/tests/data/DR_DEU_Merging_MT_v01_shifted.xodr"
+            track_filename = "bark/runtime/tests/data/interaction_dataset_dummy_track.csv"
 
             params["Scenario"]["Generation"]["InteractionDatasetScenarioGenerationFull"]["MapFilename"] = map_filename
             params["Scenario"]["Generation"]["InteractionDatasetScenarioGenerationFull"]["TrackFilename"] = track_filename

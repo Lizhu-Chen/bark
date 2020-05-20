@@ -14,14 +14,14 @@ py_library(
             "__init__.py"
             ],
     data = [
-        "//bark/pybark:core.so",
+        "//bark:generate_core",
         ] + 
     select({":_interaction_dataset_present" : ["@interaction_dataset_fortiss_internal//:maps_tracks"], "//conditions:default": []}),
     imports = ["../../../python/"],
     deps = [
         "//bark/runtime/viewer:matplotlib_viewer",
         "//bark/runtime:runtime",
-        "//bark/runtime/commons:model_json_conversion",
+        "//bark/runtime/commons:commons",
         "@com_github_interaction_dataset_interaction_dataset//:interaction-tools",
     ],
     visibility = ["//visibility:public"],

@@ -39,7 +39,7 @@ dynamic_model = SingleTrackModel()
 
 The map is specified using:
 ```python
-xodr_parser = XodrParser("modules/runtime/tests/data/Crossing8Course.xodr")
+xodr_parser = XodrParser("bark/runtime/tests/data/Crossing8Course.xodr")
 ```
 
 Furthermore, the `XodrParser` generates the `OpenDriveMap` and `Roadgraph`. These generated entities are then passed to the `MapInterface`.
