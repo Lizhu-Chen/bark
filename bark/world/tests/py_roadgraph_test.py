@@ -4,9 +4,10 @@
 # https://opensource.org/licenses/MIT
 
 import unittest
+import os
 from bark.core.world.map import Roadgraph
 from bark.core.world.opendrive import XodrLane
-from bark.runtime.commons.xodr_parser import XodrParser
+from bark.runtime.commons import XodrParser
 
 
 class RoadgraphTests(unittest.TestCase):
@@ -33,7 +34,7 @@ class RoadgraphTests(unittest.TestCase):
       print(edge.edge_type)
   
   def test_FindRoadPath_4way_intersection(self):
-    xodr_parser = XodrParser("bark/runtime/tests/data/4way_intersection.xodr")
+    xodr_parser = XodrParser(os.path.join(os.path.dirname(__file__),"../../runtime/tests/data/4way_intersection.xodr"))
     rg = Roadgraph()
     rg.Generate(xodr_parser.map)
 

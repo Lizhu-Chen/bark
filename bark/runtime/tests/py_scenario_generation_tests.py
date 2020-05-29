@@ -16,11 +16,14 @@ from bark.runtime.scenario.scenario_generation \
 from bark.runtime.commons import ParameterServer
 
 from bark.core.geometry import *
+import os
 
 
 class ScenarioGenerationTests(unittest.TestCase):
     def test_configurable_scenario_generation_default_params(self):
         params = ParameterServer()
+        mapfile = os.path.join(os.path.dirname(__file__),"data/city_highway_straight.xodr")
+        params["Scenario"]["Generation"]["ConfigurableScenarioGeneration"]["MapFilename"] = mapfile
         scenario_generation = ConfigurableScenarioGeneration(
             num_scenarios=2, params=params)
         scenario_generation.dump_scenario_list("test.scenario")
@@ -61,6 +64,7 @@ class ScenarioGenerationTests(unittest.TestCase):
         }]
         params = ParameterServer()
         params["Scenario"]["Generation"]["ConfigurableScenarioGeneration"]["SinksSources"] = sink_source_dict
+        params["Scenario"]["Generation"]["ConfigurableScenarioGeneration"]["MapFilename"] = os.path.join(os.path.dirname(__file__),"data/city_highway_straight.xodr")
         scenario_generation = ConfigurableScenarioGeneration(
             num_scenarios=2, params=params)
         scenario_generation.dump_scenario_list("test.scenario")
@@ -134,8 +138,8 @@ class ScenarioGenerationTests(unittest.TestCase):
         def test_dataset_scenario_generation(self):
             params = ParameterServer()
 
-            map_filename = "bark/runtime/tests/data/DR_DEU_Merging_MT_v01_shifted.xodr"
-            track_filename = "bark/runtime/tests/data/interaction_dataset_dummy_track.csv"
+            map_filename =  os.path.join(os.path.dirname(__file__),"data/DR_DEU_Merging_MT_v01_shifted.xodr")
+            track_filename =  os.path.join(os.path.dirname(__file__),"data/interaction_dataset_dummy_track.csv")
 
             params["Scenario"]["Generation"]["InteractionDatasetScenarioGenerationFull"]["MapFilename"] = map_filename
             params["Scenario"]["Generation"]["InteractionDatasetScenarioGenerationFull"]["TrackFilename"] = track_filename

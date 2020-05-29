@@ -23,6 +23,7 @@ class ConfigurableScenarioGeneration(ScenarioGeneration):
     super(ConfigurableScenarioGeneration, self).__init__(params, num_scenarios, random_seed)
 
   def initialize_params(self, params):
+    print (params["Scenario"])
     params_temp = \
       self._params["Scenario"]["Generation"]["ConfigurableScenarioGeneration"]
     self._map_file_name = params_temp["MapFilename",
@@ -52,6 +53,8 @@ class ConfigurableScenarioGeneration(ScenarioGeneration):
     }
     ]
     ]
+
+    print (self._map_file_name)
     self._conflict_resolutions = params_temp["ConflictResolution", "How are conflicts for overlapping \
               sources and sinks resolved", {"left_lane/right_lane" : (0.2, 0.8)}]
     self._random_state = np.random.RandomState(self._random_seed)
