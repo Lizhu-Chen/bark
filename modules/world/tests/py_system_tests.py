@@ -152,7 +152,7 @@ class SystemTests(unittest.TestCase):
                       agent_2d_shape, agent_params, goal_definition, map_interface)
         world.AddAgent(agent)
 
-        init_state2 = np.array([0, 25, -5.25, 0, 0])
+        init_state2 = np.array([0, 20, -5.25, 0, 0])
         agent2 = Agent(init_state2, behavior_model2, dynamic_model2, execution_model2,
                         agent_2d_shape, agent_params, goal_definition, map_interface)
         world.AddAgent(agent2)
@@ -223,7 +223,7 @@ class SystemTests(unittest.TestCase):
                       agent_2d_shape, agent_params, goal_definition, map_interface)
         world.AddAgent(agent)
 
-        init_state2 = np.array([0, 25, -5.25, 0, 15])
+        init_state2 = np.array([0, 15, -5.25, 0, 15])
         agent2 = Agent(init_state2, behavior_model2, dynamic_model2, execution_model2,
                         agent_2d_shape, agent_params, goal_definition, map_interface)
         world.AddAgent(agent2)
