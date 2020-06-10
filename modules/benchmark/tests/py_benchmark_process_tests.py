@@ -27,7 +27,7 @@ os.chdir("../benchmark_database/")
 
 class DatabaseRunnerTests(unittest.TestCase):
     def test_database_run_and_analyze(self):
-        dbs = DatabaseSerializer(test_scenarios=1, test_world_steps=2, num_serialize_scenarios=5)
+        dbs = DatabaseSerializer(test_scenarios=2, test_world_steps=2, num_serialize_scenarios=2)
         dbs.process("data/database1")
         local_release_filename = dbs.release(version="test")#test
 
@@ -35,7 +35,7 @@ class DatabaseRunnerTests(unittest.TestCase):
 
         evaluators = {"success" : "EvaluatorGoalReached", "collision" : "EvaluatorCollisionEgoAgent",
                       "max_steps": "EvaluatorStepCount"}
-        terminal_when = {"collision" :lambda x: x, "max_steps": lambda x : x>2, "success" : lambda x: x}
+        terminal_when = {"collision" :lambda x: x, "max_steps": lambda x : x>40, "success" : lambda x: x}
         #params = ParameterServer() # only for evaluated agents not passed to scenario!
 
         try:
@@ -43,10 +43,14 @@ class DatabaseRunnerTests(unittest.TestCase):
         except:
             print("Rerun with --define planner_uct=true")
             return
-        
-        scenario_param_file ="macro_actions_test.json" # must be within examples params folder
-        params1 = ParameterServer(filename= os.path.join("modules/benchmark/tests/params/",scenario_param_file))
-        params2 = ParameterServer(filename= os.path.join("modules/benchmark/tests/params/",scenario_param_file))
+
+        default_params = ParameterServer()
+        default_model = BehaviorUCTSingleAgentMacroActions(default_params)
+        default_params.Save(filename="./default_macro_action_params.json")
+
+        scenario_param_file ="macro_action_params.json" # must be within examples params folder
+        params1 = ParameterServer(filename= os.path.join("/home/bernhard/practical_course/bark/modules/benchmark/tests/params/",scenario_param_file))
+        params2 = ParameterServer(filename= os.path.join("/home/bernhard/practical_course/bark/modules/benchmark/tests/params/",scenario_param_file))
         params2["BehaviorUctSingleAgent"]["UseRandomHeuristic"]=False
         behaviors_tested = {"RandomHeuristic": BehaviorUCTSingleAgentMacroActions(params1), "DomainHeuristic" : BehaviorUCTSingleAgentMacroActions(params2)}
 
@@ -61,7 +65,7 @@ class DatabaseRunnerTests(unittest.TestCase):
         result.dump(os.path.join("./benchmark_results.pickle"))
         result_loaded = BenchmarkResult.load(os.path.join("./benchmark_results.pickle"))
 
-       
+        print(result_loaded.get_data_frame())
 
         analyzer = BenchmarkAnalyzer(benchmark_result=result_loaded)
         configs_random = analyzer.find_configs(criteria={"behavior": lambda x: x=="RandomHeuristic", "success": lambda x : not x})

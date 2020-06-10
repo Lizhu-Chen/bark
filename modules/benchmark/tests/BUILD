@@ -36,7 +36,8 @@ py_test(
   srcs = ["py_benchmark_process_tests.py"],
   data = ["//python:bark.so",
           "@benchmark_database//data/database1:database1",
-          "//modules/runtime/tests:xodr_data"
+          "//modules/runtime/tests:xodr_data",
+          "//modules/benchmark/tests/params:macro_params"
           ],
   imports = ['../python/'],
   deps = [
