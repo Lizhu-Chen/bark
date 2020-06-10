@@ -5,8 +5,8 @@ def bark_dependencies():
     _maybe(
     git_repository,
     name = "bark_project",
-    branch = "master",
-    remote = "https://github.com/bark-simulator/bark"
+    branch = "motion_primitives_includes",
+    remote = "https://github.com/Lizhu-Chen/bark"
     )
 
     _maybe(
