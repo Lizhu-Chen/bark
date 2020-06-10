@@ -108,7 +108,7 @@ class SystemTests(unittest.TestCase):
         # World Definition
         scenario_param_file ="macro_actions_test.json" # must be within examples params folder
         params = ParameterServer(filename= os.path.join("modules/world/tests/params/",scenario_param_file))
-
+        params["BehaviorUctSingleAgent"]["UseRandomHeuristic"] = False
         world = World(params)
 
         # Model Definitions
@@ -169,11 +169,13 @@ class SystemTests(unittest.TestCase):
         # Draw map
         video_renderer = VideoRenderer(renderer=viewer, world_step_time=sim_step_time)
 
+        params.Save(filename="default_uct.json")
+
         for _ in range(0, 5):
             world.Step(sim_step_time)
             viewer.clear()
             video_renderer.drawWorld(world)
-            video_renderer.drawGoalDefinition(goal_definition)
+            video_renderer.drawGoalDefinition(goal_definition, "red", 0.5, "red")
             time.sleep(sim_step_time/sim_real_time_factor)
 
         video_renderer.export_video(filename="./test_video_intermediate", remove_image_dir=True)
